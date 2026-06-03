@@ -16,7 +16,16 @@ const userSchema = mongoose.Schema({
     },
 
     password: {
-        
-    }
-    
+        type: String,
+        required: [true, "Passwpord is required for creating a account"],
+        minlength: [6, "password should be contain more than six character"],
+        select: false
+    },
+
+    timestamps:true
 });
+
+
+userSchema.pre("save",async function (next) {
+    
+})
