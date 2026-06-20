@@ -5,7 +5,10 @@ const authController = require("../controllers/auth.controller")
 
 
 /* POST api/auth/register */
-router.post("/register", authController.userRegisterControler)
+router.post("/register", authController.userRegisterControler);
+
+/* POST api/auth/login */
+router.post("/login", authController.userLoginControler);
 
 
 
