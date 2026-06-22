@@ -6,11 +6,15 @@ const accountSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
       required: [true, "Account must be associated with a user"],
-      index:true
+      index: true,
     },
     status: {
-      enum: ["ACTIVE", "FROZEN", "CLOSED"],
-      message: "Status can be ither ACTIVE , FROZEN or CLOSED",
+      type: String,
+      enum: {
+        values: ["ACTIVE", "FROZEN", "CLOSED"],
+        message: "Status can be ither ACTIVE , FROZEN or CLOSED",
+      },
+      default: "ACTIVE"
     },
     currency: {
       type: String,
