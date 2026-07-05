@@ -10,6 +10,11 @@ router.post("/register", authController.userRegisterControler);
 /* POST api/auth/login */
 router.post("/login", authController.userLoginControler);
 
+/**
+ * - POST /api/auth/logout
+ */
+
+router.post("/logout",authController.)
 
 
 module.exports = router

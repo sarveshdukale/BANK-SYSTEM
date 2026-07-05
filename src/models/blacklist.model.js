@@ -12,4 +12,14 @@ const tokenBlackListSchema = new mongoose.Schema({
         default: Date.now,
         immutable: true,
     }
+}, {
+    timestamps: true
 })
+
+tokenBlackListSchema.index({ createdAt: 1 }, {
+    expireAfterSeconds: 60 * 60 * 24 * 3
+})
+
+
+const tokenBlackListModel = mongoose.Model("tokenBlackList", tokenBlackListSchema);
+module.exports = tokenBlackListModel
